@@ -1,0 +1,382 @@
+--- Terminal on /dev/ttyUSB0 | 115200 8-N-1
+--- Available filters and text transformations: colorize, debug, default, direct, esp32_exception_decoder, hexlify, log2file, nocontrol, printable, send_on_enter, time
+--- More details at https://bit.ly/pio-monitor-filters
+--- Quit: Ctrl+C | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H
+ets Jun  8 2016 00:22:57
+
+rst:0x1 (POWERON_RESET),boot:0x17 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:1184
+load:0x40078000,len:12784
+load:0x40080400,len:3032
+entry 0x400805e4
+[␀␘␂␂␂��m␑um����2-hal-cpu.c:214] setCpuFrequencyMhz(): PLL: 480 / 2 = 240 Mhz, APB: 80000000 Hz
+[   762][V][BLEDevice.cpp:76] createServer(): >> createServer
+[   763][V][BLEServer.cpp:290] registerApp(): >> registerApp - 0
+[   763][V][FreeRTOS.cpp:189] take(): Semaphore taking: name: RegisterAppEvt (0x3ffd936c), owner: <N/A> for registerApp
+[   773][V][FreeRTOS.cpp:198] take(): Semaphore taken:  name: RegisterAppEvt (0x3ffd936c), owner: registerApp
+[   783][V][FreeRTOS.cpp:63] wait(): >> wait: Semaphore waiting: name: RegisterAppEvt (0x3ffd936c), owner: registerApp for registerApp
+[   784][D][BLEDevice.cpp:102] gattServerEventHandler(): gattServerEventHandler [esp_gatt_if: 4] ... ESP_GATTS_REG_EVT
+[   805][V][BLEUtils.cpp:1530] dumpGattServerEvent(): GATT ServerEvent: ESP_GATTS_REG_EVT
+[   813][V][BLEUtils.cpp:1673] dumpGattServerEvent(): [status: ESP_GATT_OK, app_id: 0]
+[   821][V][BLEServer.cpp:144] handleGATTServerEvent(): >> handleGATTServerEvent: ESP_GATTS_REG_EVT
+[   829][V][FreeRTOS.cpp:143] give(): Semaphore giving: name: RegisterAppEvt (0x3ffd936c), owner: registerApp
+[   839][V][BLEServer.cpp:280] handleGATTServerEvent(): << handleGATTServerEvent
+[   839][V][FreeRTOS.cpp:77] wait(): << wait: Semaphore released: name: RegisterAppEvt (0x3ffd936c), owner: <N/A>
+[   856][V][BLEServer.cpp:294] registerApp(): << registerApp
+[   862][V][BLEDevice.cpp:83] createServer(): << createServer
+[   867][V][BLEServer.cpp:67] createService(): >> createService - 4fafc201-1fb5-459e-8fcc-c5c9c331914b
+[   876][V][FreeRTOS.cpp:189] take(): Semaphore taking: name: CreateEvt (0x3ffce19c), owner: <N/A> for createService
+[   886][V][FreeRTOS.cpp:198] take(): Semaphore taken:  name: CreateEvt (0x3ffce19c), owner: createService
+[   896][V][BLEService.cpp:60] executeCreate(): >> executeCreate() - Creating service (esp_ble_gatts_create_service) service uuid: 4fafc201-1fb5-459e-8fcc-c5c9c331914b
+[   910][V][FreeRTOS.cpp:189] take(): Semaphore taking: name: CreateEvt (0x3ffd8adc), owner: <N/A> for executeCreate
+[   921][V][FreeRTOS.cpp:198] take(): Semaphore taken:  name: CreateEvt (0x3ffd8adc), owner: executeCreate
+[   930][V][FreeRTOS.cpp:63] wait(): >> wait: Semaphore waiting: name: CreateEvt (0x3ffd8adc), owner: executeCreate for executeCreate
+[   931][D][BLEDevice.cpp:102] gattServerEventHandler(): gattServerEventHandler [esp_gatt_if: 4] ... ESP_GATTS_CREATE_EVT
+[   952][V][BLEUtils.cpp:1530] dumpGattServerEvent(): GATT ServerEvent: ESP_GATTS_CREATE_EVT
+[   961][V][BLEUtils.cpp:1599] dumpGattServerEvent(): [status: ESP_GATT_OK, service_handle: 40 0x28, service_id: [uuid: 4fafc201-1fb5-459e-8fcc-c5c9c331914b, inst_id: 0]]
+[   975][V][BLEServer.cpp:144] handleGATTServerEvent(): >> handleGATTServerEvent: ESP_GATTS_CREATE_EVT
+[   985][V][FreeRTOS.cpp:143] give(): Semaphore giving: name: CreateEvt (0x3ffce19c), owner: createService
+[   994][V][BLEService.cpp:194] setHandle(): >> setHandle - Handle=0x28, service UUID=4fafc201-1fb5-459e-8fcc-c5c9c331914b)
+[  1005][V][BLEService.cpp:200] setHandle(): << setHandle
+[  1010][V][FreeRTOS.cpp:143] give(): Semaphore giving: name: CreateEvt (0x3ffd8adc), owner: executeCreate
+[  1019][V][BLEServer.cpp:280] handleGATTServerEvent(): << handleGATTServerEvent
+[  1019][V][FreeRTOS.cpp:77] wait(): << wait: Semaphore released: name: CreateEvt (0x3ffd8adc), owner: <N/A>
+[  1036][V][BLEService.cpp:76] executeCreate(): << executeCreate
+[  1042][V][FreeRTOS.cpp:63] wait(): >> wait: Semaphore waiting: name: CreateEvt (0x3ffce19c), owner: <N/A> for createService
+[  1053][V][FreeRTOS.cpp:77] wait(): << wait: Semaphore released: name: CreateEvt (0x3ffce19c), owner: <N/A>
+[  1062][V][BLEServer.cpp:83] createService(): << createService
+[  1068][V][BLEService.cpp:222] addCharacteristic(): >> addCharacteristic()
+[  1074][D][BLEService.cpp:225] addCharacteristic(): Adding characteristic: uuid=beb5483e-36e1-4688-b7f5-ea07361b26a8 to service: UUID: 4fafc201-1fb5-459e-8fcc-c5c9c331914b, handle: 0x0028
+[  1091][V][BLEService.cpp:237] addCharacteristic(): << addCharacteristic()
+[  1098][V][BLECharacteristic.cpp:68] addDescriptor(): >> addDescriptor(): Adding UUID: 00002902-0000-1000-8000-00805f9b34fb, handle: 0xffff to UUID: beb5483e-36e1-4688-b7f5-ea07361b26a8, handle : 0xffff Read Write Notify Indicate 
+[  1118][V][BLECharacteristic.cpp:70] addDescriptor(): << addDescriptor()
+[  1124][V][BLEService.cpp:134] start(): >> start(): Starting service (esp_ble_gatts_start_service): UUID: 4fafc201-1fb5-459e-8fcc-c5c9c331914b, handle: 0x0028
+[  1138][V][BLECharacteristic.cpp:79] executeCreate(): >> executeCreate()
+[  1145][D][BLECharacteristic.cpp:90] executeCreate(): Registering characteristic (esp_ble_gatts_add_char): uuid: beb5483e-36e1-4688-b7f5-ea07361b26a8, service: UUID: 4fafc201-1fb5-459e-8fcc-c5c9c331914b, handle: 0x0028
+[  1164][V][FreeRTOS.cpp:189] take(): Semaphore taking: name: CreateEvt (0x3ffd9a5c), owner: <N/A> for executeCreate
+[  1174][V][FreeRTOS.cpp:198] take(): Semaphore taken:  name: CreateEvt (0x3ffd9a5c), owner: executeCreate
+[  1184][V][FreeRTOS.cpp:63] wait(): >> wait: Semaphore waiting: name: CreateEvt (0x3ffd9a5c), owner: executeCreate for executeCreate
+[  1185][D][BLEDevice.cpp:102] gattServerEventHandler(): gattServerEventHandler [esp_gatt_if: 4] ... ESP_GATTS_ADD_CHAR_EVT
+[  1206][V][BLEUtils.cpp:1530] dumpGattServerEvent(): GATT ServerEvent: ESP_GATTS_ADD_CHAR_EVT
+[  1215][V][BLEUtils.cpp:1553] dumpGattServerEvent(): [status: ESP_GATT_OK, attr_handle: 42 0x2a, service_handle: 40 0x28, char_uuid: beb5483e-36e1-4688-b7f5-ea07361b26a8]
+[  1230][V][BLEServer.cpp:144] handleGATTServerEvent(): >> handleGATTServerEvent: ESP_GATTS_ADD_CHAR_EVT
+[  1239][V][BLECharacteristic.cpp:604] setHandle(): >> setHandle: handle=0x2a, characteristic uuid=beb5483e-36e1-4688-b7f5-ea07361b26a8
+[  1251][V][BLECharacteristic.cpp:606] setHandle(): << setHandle
+[  1256][V][BLECharacteristic.cpp:205] handleGATTServerEvent(): >> handleGATTServerEvent: ESP_GATTS_ADD_CHAR_EVT
+[  1266][V][FreeRTOS.cpp:143] give(): Semaphore giving: name: CreateEvt (0x3ffd9a5c), owner: executeCreate
+[  1276][V][BLECharacteristic.cpp:465] handleGATTServerEvent(): << handleGATTServerEvent
+[  1276][V][FreeRTOS.cpp:77] wait(): << wait: Semaphore released: name: CreateEvt (0x3ffd9a5c), owner: <N/A>
+[  1284][V][BLEServer.cpp:280] handleGATTServerEvent(): << handleGATTServerEvent
+[  1293][V][BLEDescriptor.cpp:57] executeCreate(): >> executeCreate(): UUID: 00002902-0000-1000-8000-00805f9b34fb, handle: 0xffff
+[  1312][V][FreeRTOS.cpp:189] take(): Semaphore taking: name: CreateEvt (0x3ffd9f94), owner: <N/A> for executeCreate
+[  1322][V][FreeRTOS.cpp:198] take(): Semaphore taken:  name: CreateEvt (0x3ffd9f94), owner: executeCreate
+[  1331][V][FreeRTOS.cpp:63] wait(): >> wait: Semaphore waiting: name: CreateEvt (0x3ffd9f94), owner: executeCreate for executeCreate
+[  1332][D][BLEDevice.cpp:102] gattServerEventHandler(): gattServerEventHandler [esp_gatt_if: 4] ... ESP_GATTS_ADD_CHAR_DESCR_EVT
+[  1354][V][BLEUtils.cpp:1530] dumpGattServerEvent(): GATT ServerEvent: ESP_GATTS_ADD_CHAR_DESCR_EVT
+[  1363][V][BLEUtils.cpp:1541] dumpGattServerEvent(): [status: ESP_GATT_OK, attr_handle: 43 0x2b, service_handle: 40 0x28, char_uuid: 00002902-0000-1000-8000-00805f9b34fb]
+[  1378][V][BLEServer.cpp:144] handleGATTServerEvent(): >> handleGATTServerEvent: ESP_GATTS_ADD_CHAR_DESCR_EVT
+[  1388][V][BLECharacteristic.cpp:205] handleGATTServerEvent(): >> handleGATTServerEvent: ESP_GATTS_ADD_CHAR_DESCR_EVT
+[  1398][V][BLEDescriptor.cpp:220] setHandle(): >> setHandle(0x2b): Setting descriptor handle to be 0x2b
+[  1407][V][BLEDescriptor.cpp:222] setHandle(): << setHandle()
+[  1413][V][FreeRTOS.cpp:143] give(): Semaphore giving: name: CreateEvt (0x3ffd9f94), owner: executeCreate
+[  1422][V][BLECharacteristic.cpp:465] handleGATTServerEvent(): << handleGATTServerEvent
+[  1422][V][FreeRTOS.cpp:77] wait(): << wait: Semaphore released: name: CreateEvt (0x3ffd9f94), owner: <N/A>
+[  1430][V][BLEServer.cpp:280] handleGATTServerEvent(): << handleGATTServerEvent
+[  1440][V][BLEDescriptor.cpp:81] executeCreate(): << executeCreate
+[  1453][V][BLECharacteristic.cpp:116] executeCreate(): << executeCreate
+[  1459][V][FreeRTOS.cpp:189] take(): Semaphore taking: name: StartEvt (0x3ffd8fe8), owner: <N/A> for start
+[  1469][V][FreeRTOS.cpp:198] take(): Semaphore taken:  name: StartEvt (0x3ffd8fe8), owner: start
+[  1478][V][FreeRTOS.cpp:63] wait(): >> wait: Semaphore waiting: name: StartEvt (0x3ffd8fe8), owner: start for start
+[  1478][D][BLEDevice.cpp:102] gattServerEventHandler(): gattServerEventHandler [esp_gatt_if: 4] ... ESP_GATTS_START_EVT
+[  1498][V][BLEUtils.cpp:1530] dumpGattServerEvent(): GATT ServerEvent: ESP_GATTS_START_EVT
+[  1506][V][BLEUtils.cpp:1686] dumpGattServerEvent(): [status: ESP_GATT_OK, service_handle: 0x28]
+[  1515][V][BLEServer.cpp:144] handleGATTServerEvent(): >> handleGATTServerEvent: ESP_GATTS_START_EVT
+[  1524][V][FreeRTOS.cpp:143] give(): Semaphore giving: name: StartEvt (0x3ffd8fe8), owner: start
+[  1532][V][BLECharacteristic.cpp:205] handleGATTServerEvent(): >> handleGATTServerEvent: ESP_GATTS_START_EVT
+[  1532][V][FreeRTOS.cpp:77] wait(): << wait: Semaphore released: name: StartEvt (0x3ffd8fe8), owner: <N/A>
+[  1542][V][BLECharacteristic.cpp:465] handleGATTServerEvent(): << handleGATTServerEvent
+[  1552][V][BLEService.cpp:159] start(): << start()
+[  1559][V][BLEServer.cpp:280] handleGATTServerEvent(): << handleGATTServerEvent
+[  1564][I][BLEDevice.cpp:577] getAdvertising(): create advertising
+[  1577][D][BLEDevice.cpp:579] getAdvertising(): get advertising
+[  1583][V][BLEDevice.cpp:584] startAdvertising(): >> startAdvertising
+[  1589][D][BLEDevice.cpp:579] getAdvertising(): get advertising
+[  1595][V][BLEAdvertising.cpp:187] start(): >> start: customAdvData: 0, customScanResponseData: 0
+[  1603][D][BLEAdvertising.cpp:199] start(): - advertising service: 4fafc201-1fb5-459e-8fcc-c5c9c331914b
+[  1613][V][BLEAdvertising.cpp:252] start(): << start
+[  1617][V][BLEDevice.cpp:586] startAdvertising(): << startAdvertising
+[  1618][V][BLEUtils.cpp:1049] dumpGapEvent(): Received a GAP event: ESP_GAP_BLE_ADV_DATA_SET_COMPLETE_EVT
+Waiting a client connection to notify...[  1633][V][BLEUtils.cpp:1056] dumpGapEvent(): [status: 0]
+
+[  1644][D][BLEDevice.cpp:579] getAdvertising(): get advertising
+[  1648][D][BLEAdvertising.cpp:506] handleGAPEvent(): handleGAPEvent [event no: 0]
+[  1655][V][BLEUtils.cpp:1049] dumpGapEvent(): Received a GAP event: ESP_GAP_BLE_ADV_START_COMPLETE_EVT
+[  1664][V][BLEUtils.cpp:1074] dumpGapEvent(): [status: 0]
+[  1669][D][BLEDevice.cpp:579] getAdvertising(): get advertising
+[  1675][D][BLEAdvertising.cpp:506] handleGAPEvent(): handleGAPEvent [event no: 6]
+[ 32244][D][BLEDevice.cpp:102] gattServerEventHandler(): gattServerEventHandler [esp_gatt_if: 4] ... ESP_GATTS_CONNECT_EVT
+[ 32245][V][BLEUtils.cpp:1530] dumpGattServerEvent(): GATT ServerEvent: ESP_GATTS_CONNECT_EVT
+[ 32253][V][BLEUtils.cpp:1590] dumpGattServerEvent(): [conn_id: 0, remote_bda: e4:a4:71:65:4b:5d]
+[ 32262][V][BLEServer.cpp:144] handleGATTServerEvent(): >> handleGATTServerEvent: ESP_GATTS_CONNECT_EVT
+[ 32271][D][BLEServer.cpp:359] onConnect(): BLEServerCallbacks
+[ 32276][D][BLEServer.cpp:360] onConnect(): BLEServerCallbacks
+[ 32282][D][BLEServer.cpp:361] onConnect(): BLEServerCallbacks
+[ 32288][V][main.cpp:25] onConnect(): connection requested by: e4:a4:71:65:4b:5d
+[ 32295][V][BLECharacteristic.cpp:205] handleGATTServerEvent(): >> handleGATTServerEvent: ESP_GATTS_CONNECT_EVT
+[ 32295][V][BLECharacteristic.cpp:659] setValue(): >> setValue: length=4, data=00000000, characteristic UUID=beb5483e-36e1-4688-b7f5-ea07361b26a8
+[ 32304][V][BLECharacteristic.cpp:465] handleGATTServerEvent(): << handleGATTServerEvent
+[ 32317][V][FreeRTOS.cpp:189] take(): Semaphore taking: name: SetValue (0x3ffd9e78), owner: <N/A> for <Unknown>
+[ 32325][V][BLEServer.cpp:280] handleGATTServerEvent(): << handleGATTServerEvent
+[ 32335][V][FreeRTOS.cpp:198] take(): Semaphore taken:  name: SetValue (0x3ffd9e78), owner: <Unknown>
+[ 32342][D][BLEDevice.cpp:102] gattServerEventHandler(): gattServerEventHandler [esp_gatt_if: 4] ... ESP_GATTS_MTU_EVT
+[ 32351][V][FreeRTOS.cpp:143] give(): Semaphore giving: name: SetValue (0x3ffd9e78), owner: <Unknown>
+[ 32361][V][BLEUtils.cpp:1530] dumpGattServerEvent(): GATT ServerEvent: ESP_GATTS_MTU_EVT
+[ 32370][V][BLECharacteristic.cpp:668] setValue(): << setValue
+[ 32378][V][BLEUtils.cpp:1648] dumpGattServerEvent(): [conn_id: 0, mtu: 517]
+[ 32384][V][BLECharacteristic.cpp:490] notify(): >> notify: length: 4
+[ 32390][V][BLEServer.cpp:144] handleGATTServerEvent(): >> handleGATTServerEvent: ESP_GATTS_MTU_EVT
+[ 32397][D][BLECharacteristic.cpp:790] onNotify(): >> onNotify: default
+[ 32405][D][BLEServer.cpp:378] onMtuChanged(): BLEServerCallbacks
+[ 32412][D][BLECharacteristic.cpp:791] onNotify(): << onNotify
+[ 32418][D][BLEServer.cpp:379] onMtuChanged(): BLEServerCallbacks
+[ 32423][V][GeneralUtils.cpp:296] hexDump():      00 01 02 03 04 05 06 07 08 09 0a 0b 0c 0d 0e 0f
+[ 32429][D][BLEServer.cpp:380] onMtuChanged(): BLEServerCallbacks
+[ 32437][V][GeneralUtils.cpp:297] hexDump():      -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+[ 32443][V][BLECharacteristic.cpp:205] handleGATTServerEvent(): >> handleGATTServerEvent: ESP_GATTS_MTU_EVT
+[ 32452][V][GeneralUtils.cpp:323] hexDump(): 0000 00 00 00 00                                      ....
+[ 32461][V][BLECharacteristic.cpp:465] handleGATTServerEvent(): << handleGATTServerEvent
+[ 32471][V][BLECharacteristic.cpp:511] notify(): << notifications disabled; ignoring
+[ 32478][V][BLEServer.cpp:280] handleGATTServerEvent(): << handleGATTServerEvent
+[ 32486][D][BLECharacteristic.cpp:796] onStatus(): >> onStatus: default
+[ 32499][D][BLECharacteristic.cpp:797] onStatus(): << onStatus
+[ 32507][V][BLECharacteristic.cpp:659] setValue(): >> setValue: length=4, data=01000000, characteristic UUID=beb5483e-36e1-4688-b7f5-ea07361b26a8
+[ 32518][V][FreeRTOS.cpp:189] take(): Semaphore taking: name: SetValue (0x3ffd9e78), owner: <N/A> for <Unknown>
+[ 32527][V][FreeRTOS.cpp:198] take(): Semaphore taken:  name: SetValue (0x3ffd9e78), owner: <Unknown>
+[ 32536][V][FreeRTOS.cpp:143] give(): Semaphore giving: name: SetValue (0x3ffd9e78), owner: <Unknown>
+[ 32545][V][BLECharacteristic.cpp:668] setValue(): << setValue
+[ 32551][V][BLECharacteristic.cpp:490] notify(): >> notify: length: 4
+[ 32557][D][BLECharacteristic.cpp:790] onNotify(): >> onNotify: default
+[ 32563][D][BLECharacteristic.cpp:791] onNotify(): << onNotify
+[ 32569][V][GeneralUtils.cpp:296] hexDump():      00 01 02 03 04 05 06 07 08 09 0a 0b 0c 0d 0e 0f
+[ 32577][V][GeneralUtils.cpp:297] hexDump():      -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+[ 32586][V][GeneralUtils.cpp:323] hexDump(): 0000 01 00 00 00                                      ....
+[ 32595][V][BLECharacteristic.cpp:511] notify(): << notifications disabled; ignoring
+[ 32603][D][BLECharacteristic.cpp:796] onStatus(): >> onStatus: default
+[ 32609][D][BLECharacteristic.cpp:797] onStatus(): << onStatus
+[ 32617][V][BLECharacteristic.cpp:659] setValue(): >> setValue: length=4, data=02000000, characteristic UUID=beb5483e-36e1-4688-b7f5-ea07361b26a8
+[ 32627][V][FreeRTOS.cpp:189] take(): Semaphore taking: name: SetValue (0x3ffd9e78), owner: <N/A> for <Unknown>
+[ 32637][V][FreeRTOS.cpp:198] take(): Semaphore taken:  name: SetValue (0x3ffd9e78), owner: <Unknown>
+[ 32646][V][FreeRTOS.cpp:143] give(): Semaphore giving: name: SetValue (0x3ffd9e78), owner: <Unknown>
+[ 32655][V][BLECharacteristic.cpp:668] setValue(): << setValue
+[ 32660][V][BLECharacteristic.cpp:490] notify(): >> notify: length: 4
+[ 32667][D][BLECharacteristic.cpp:790] onNotify(): >> onNotify: default
+[ 32673][D][BLECharacteristic.cpp:791] onNotify(): << onNotify
+[ 32679][V][GeneralUtils.cpp:296] hexDump():      00 01 02 03 04 05 06 07 08 09 0a 0b 0c 0d 0e 0f
+[ 32687][V][GeneralUtils.cpp:297] hexDump():      -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+[ 32696][V][GeneralUtils.cpp:323] hexDump(): 0000 02 00 00 00                                      ....
+[ 32705][V][BLECharacteristic.cpp:511] notify(): << notifications disabled; ignoring
+[ 32712][D][BLECharacteristic.cpp:796] onStatus(): >> onStatus: default
+[ 32719][D][BLECharacteristic.cpp:797] onStatus(): << onStatus
+[ 32727][V][BLECharacteristic.cpp:659] setValue(): >> setValue: length=4, data=03000000, characteristic UUID=beb5483e-36e1-4688-b7f5-ea07361b26a8
+[ 32737][V][FreeRTOS.cpp:189] take(): Semaphore taking: name: SetValue (0x3ffd9e78), owner: <N/A> for <Unknown>
+[ 32747][V][FreeRTOS.cpp:198] take(): Semaphore taken:  name: SetValue (0x3ffd9e78), owner: <Unknown>
+[ 32756][V][FreeRTOS.cpp:143] give(): Semaphore giving: name: SetValue (0x3ffd9e78), owner: <Unknown>
+[ 32765][V][BLECharacteristic.cpp:668] setValue(): << setValue
+[ 32770][V][BLECharacteristic.cpp:490] notify(): >> notify: length: 4
+[ 32776][D][BLECharacteristic.cpp:790] onNotify(): >> onNotify: default
+[ 32783][D][BLECharacteristic.cpp:791] onNotify(): << onNotify
+[ 32788][V][GeneralUtils.cpp:296] hexDump():      00 01 02 03 04 05 06 07 08 09 0a 0b 0c 0d 0e 0f
+[ 32797][V][GeneralUtils.cpp:297] hexDump():      -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+[ 32806][V][GeneralUtils.cpp:323] hexDump(): 0000 03 00 00 00                                      ....
+[ 32815][V][BLECharacteristic.cpp:511] notify(): << notifications disabled; ignoring
+[ 32822][D][BLECharacteristic.cpp:796] onStatus(): >> onStatus: default
+[ 32828][D][BLECharacteristic.cpp:797] onStatus(): << onStatus
+[ 32837][V][BLECharacteristic.cpp:659] setValue(): >> setValue: length=4, data=04000000, characteristic UUID=beb5483e-36e1-4688-b7f5-ea07361b26a8
+[ 32847][V][FreeRTOS.cpp:189] take(): Semaphore taking: name: SetValue (0x3ffd9e78), owner: <N/A> for <Unknown>
+[ 32856][V][FreeRTOS.cpp:198] take(): Semaphore taken:  name: SetValue (0x3ffd9e78), owner: <Unknown>
+[ 32865][V][FreeRTOS.cpp:143] give(): Semaphore giving: name: SetValue (0x3ffd9e78), owner: <Unknown>
+[ 32874][V][BLECharacteristic.cpp:668] setValue(): << setValue
+[ 32880][V][BLECharacteristic.cpp:490] notify(): >> notify: length: 4
+[ 32886][D][BLECharacteristic.cpp:790] onNotify(): >> onNotify: default
+[ 32892][D][BLECharacteristic.cpp:791] onNotify(): << onNotify
+[ 32898][V][GeneralUtils.cpp:296] hexDump():      00 01 02 03 04 05 06 07 08 09 0a 0b 0c 0d 0e 0f
+[ 32907][V][GeneralUtils.cpp:297] hexDump():      -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+[ 32915][V][GeneralUtils.cpp:323] hexDump(): 0000 04 00 00 00                                      ....
+[ 32924][V][BLECharacteristic.cpp:511] notify(): << notifications disabled; ignoring
+[ 32932][D][BLECharacteristic.cpp:796] onStatus(): >> onStatus: default
+[ 32938][D][BLECharacteristic.cpp:797] onStatus(): << onStatus
+[ 32946][V][BLECharacteristic.cpp:659] setValue(): >> setValue: length=4, data=05000000, characteristic UUID=beb5483e-36e1-4688-b7f5-ea07361b26a8
+[ 32956][V][FreeRTOS.cpp:189] take(): Semaphore taking: name: SetValue (0x3ffd9e78), owner: <N/A> for <Unknown>
+[ 32966][V][FreeRTOS.cpp:198] take(): Semaphore taken:  name: SetValue (0x3ffd9e78), owner: <Unknown>
+[ 32975][V][FreeRTOS.cpp:143] give(): Semaphore giving: name: SetValue (0x3ffd9e78), owner: <Unknown>
+[ 32984][V][BLECharacteristic.cpp:668] setValue(): << setValue
+[ 32990][V][BLECharacteristic.cpp:490] notify(): >> notify: length: 4
+[ 32996][D][BLECharacteristic.cpp:790] onNotify(): >> onNotify: default
+[ 33002][D][BLECharacteristic.cpp:791] onNotify(): << onNotify
+[ 33008][V][GeneralUtils.cpp:296] hexDump():      00 01 02 03 04 05 06 07 08 09 0a 0b 0c 0d 0e 0f
+[ 33016][V][GeneralUtils.cpp:297] hexDump():      -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+[ 33025][V][GeneralUtils.cpp:323] hexDump(): 0000 05 00 00 00                                      ....
+[ 33034][V][BLECharacteristic.cpp:511] notify(): << notifications disabled; ignoring
+[ 33041][D][BLECharacteristic.cpp:796] onStatus(): >> onStatus: default
+[ 33048][D][BLECharacteristic.cpp:797] onStatus(): << onStatus
+[ 33056][V][BLECharacteristic.cpp:659] setValue(): >> setValue: length=4, data=06000000, characteristic UUID=beb5483e-36e1-4688-b7f5-ea07361b26a8
+[ 33066][V][FreeRTOS.cpp:189] take(): Semaphore taking: name: SetValue (0x3ffd9e78), owner: <N/A> for <Unknown>
+[ 33076][V][FreeRTOS.cpp:198] take(): Semaphore taken:  name: SetValue (0x3ffd9e78), owner: <Unknown>
+[ 33085][V][FreeRTOS.cpp:143] give(): Semaphore giving: name: SetValue (0x3ffd9e78), owner: <Unknown>
+[ 33094][V][BLECharacteristic.cpp:668] setValue(): << setValue
+[ 33099][V][BLECharacteristic.cpp:490] notify(): >> notify: length: 4
+[ 33106][D][BLECharacteristic.cpp:790] onNotify(): >> onNotify: default
+[ 33112][D][BLECharacteristic.cpp:791] onNotify(): << onNotify
+[ 33117][V][GeneralUtils.cpp:296] hexDump():      00 01 02 03 04 05 06 07 08 09 0a 0b 0c 0d 0e 0f
+[ 33126][V][GeneralUtils.cpp:297] hexDump():      -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+[ 33135][V][GeneralUtils.cpp:323] hexDump(): 0000 06 00 00 00                                      ....
+[ 33144][V][BLECharacteristic.cpp:511] notify(): << notifications disabled; ignoring
+[ 33151][D][BLECharacteristic.cpp:796] onStatus(): >> onStatus: default
+[ 33158][D][BLECharacteristic.cpp:797] onStatus(): << onStatus
+[ 33166][V][BLECharacteristic.cpp:659] setValue(): >> setValue: length=4, data=07000000, characteristic UUID=beb5483e-36e1-4688-b7f5-ea07361b26a8
+[ 33176][V][FreeRTOS.cpp:189] take(): Semaphore taking: name: SetValue (0x3ffd9e78), owner: <N/A> for <Unknown>
+[ 33186][V][FreeRTOS.cpp:198] take(): Semaphore taken:  name: SetValue (0x3ffd9e78), owner: <Unknown>
+[ 33195][V][FreeRTOS.cpp:143] give(): Semaphore giving: name: SetValue (0x3ffd9e78), owner: <Unknown>
+[ 33204][V][BLECharacteristic.cpp:668] setValue(): << setValue
+[ 33209][V][BLECharacteristic.cpp:490] notify(): >> notify: length: 4
+[ 33215][D][BLECharacteristic.cpp:790] onNotify(): >> onNotify: default
+[ 33222][D][BLECharacteristic.cpp:791] onNotify(): << onNotify
+[ 33227][V][GeneralUtils.cpp:296] hexDump():      00 01 02 03 04 05 06 07 08 09 0a 0b 0c 0d 0e 0f
+[ 33236][V][GeneralUtils.cpp:297] hexDump():      -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+[ 33244][V][GeneralUtils.cpp:323] hexDump(): 0000 07 00 00 00                                      ....
+[ 33253][V][BLECharacteristic.cpp:511] notify(): << notifications disabled; ignoring
+[ 33261][D][BLECharacteristic.cpp:796] onStatus(): >> onStatus: default
+[ 33267][D][BLECharacteristic.cpp:797] onStatus(): << onStatus
+[ 33275][V][BLECharacteristic.cpp:659] setValue(): >> setValue: length=4, data=08000000, characteristic UUID=beb5483e-36e1-4688-b7f5-ea07361b26a8
+[ 33286][V][FreeRTOS.cpp:189] take(): Semaphore taking: name: SetValue (0x3ffd9e78), owner: <N/A> for <Unknown>
+[ 33295][V][FreeRTOS.cpp:198] take(): Semaphore taken:  name: SetValue (0x3ffd9e78), owner: <Unknown>
+[ 33304][V][FreeRTOS.cpp:143] give(): Semaphore giving: name: SetValue (0x3ffd9e78), owner: <Unknown>
+[ 33313][V][BLECharacteristic.cpp:668] setValue(): << setValue
+[ 33319][V][BLECharacteristic.cpp:490] notify(): >> notify: length: 4
+[ 33325][D][BLECharacteristic.cpp:790] onNotify(): >> onNotify: default
+[ 33331][D][BLECharacteristic.cpp:791] onNotify(): << onNotify
+[ 33337][V][GeneralUtils.cpp:296] hexDump():      00 01 02 03 04 05 06 07 08 09 0a 0b 0c 0d 0e 0f
+[ 33345][V][GeneralUtils.cpp:297] hexDump():      -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+[ 33354][V][GeneralUtils.cpp:323] hexDump(): 0000 08 00 00 00                                      ....
+[ 33363][V][BLECharacteristic.cpp:511] notify(): << notifications disabled; ignoring
+[ 33371][D][BLECharacteristic.cpp:796] onStatus(): >> onStatus: default
+[ 33377][D][BLECharacteristic.cpp:797] onStatus(): << onStatus
+[ 33385][V][BLECharacteristic.cpp:659] setValue(): >> setValue: length=4, data=09000000, characteristic UUID=beb5483e-36e1-4688-b7f5-ea07361b26a8
+[ 33395][V][FreeRTOS.cpp:189] take(): Semaphore taking: name: SetValue (0x3ffd9e78), owner: <N/A> for <Unknown>
+[ 33405][V][FreeRTOS.cpp:198] take(): Semaphore taken:  name: SetValue (0x3ffd9e78), owner: <Unknown>
+[ 33414][V][FreeRTOS.cpp:143] give(): Semaphore giving: name: SetValue (0x3ffd9e78), owner: <Unknown>
+[ 33423][V][BLECharacteristic.cpp:668] setValue(): << setValue
+[ 33429][V][BLECharacteristic.cpp:490] notify(): >> notify: length: 4
+[ 33435][D][BLECharacteristic.cpp:790] onNotify(): >> onNotify: default
+[ 33441][D][BLECharacteristic.cpp:791] onNotify(): << onNotify
+[ 33447][V][GeneralUtils.cpp:296] hexDump():      00 01 02 03 04 05 06 07 08 09 0a 0b 0c 0d 0e 0f
+[ 33455][V][GeneralUtils.cpp:297] hexDump():      -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+[ 33464][V][GeneralUtils.cpp:323] hexDump(): 0000 09 00 00 00                                      ....
+[ 33473][V][BLECharacteristic.cpp:511] notify(): << notifications disabled; ignoring
+[ 33480][D][BLECharacteristic.cpp:796] onStatus(): >> onStatus: default
+[ 33487][D][BLECharacteristic.cpp:797] onStatus(): << onStatus
+[ 33495][V][BLECharacteristic.cpp:659] setValue(): >> setValue: length=4, data=0a000000, characteristic UUID=beb5483e-36e1-4688-b7f5-ea07361b26a8
+[ 33505][V][FreeRTOS.cpp:189] take(): Semaphore taking: name: SetValue (0x3ffd9e78), owner: <N/A> for <Unknown>
+[ 33515][V][FreeRTOS.cpp:198] take(): Semaphore taken:  name: SetValue (0x3ffd9e78), owner: <Unknown>
+[ 33524][V][FreeRTOS.cpp:143] give(): Semaphore giving: name: SetValue (0x3ffd9e78), owner: <Unknown>
+[ 33533][V][BLECharacteristic.cpp:668] setValue(): << setValue
+[ 33538][V][BLECharacteristic.cpp:490] notify(): >> notify: length: 4
+[ 33544][D][BLECharacteristic.cpp:790] onNotify(): >> onNotify: default
+[ 33551][D][BLECharacteristic.cpp:791] onNotify(): << onNotify
+[ 33556][V][GeneralUtils.cpp:296] hexDump():      00 01 02 03 04 05 06 07 08 09 0a 0b 0c 0d 0e 0f
+[ 33565][V][GeneralUtils.cpp:297] hexDump():      -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+[ 33574][V][GeneralUtils.cpp:323] hexDump(): 0000 0a 00 00 00                                      ....
+[ 33583][V][BLECharacteristic.cpp:511] notify(): << notifications disabled; ignoring
+[ 33590][D][BLECharacteristic.cpp:796] onStatus(): >> onStatus: default
+[ 33596][D][BLECharacteristic.cpp:797] onStatus(): << onStatus
+[ 33605][V][BLECharacteristic.cpp:659] setValue(): >> setValue: length=4, data=0b000000, characteristic UUID=beb5483e-36e1-4688-b7f5-ea07361b26a8
+[ 33615][V][FreeRTOS.cpp:189] take(): Semaphore taking: name: SetValue (0x3ffd9e78), owner: <N/A> for <Unknown>
+[ 33625][V][FreeRTOS.cpp:198] take(): Semaphore taken:  name: SetValue (0x3ffd9e78), owner: <Unknown>
+[ 33633][V][FreeRTOS.cpp:143] give(): Semaphore giving: name: SetValue (0x3ffd9e78), owner: <Unknown>
+[ 33642][V][BLECharacteristic.cpp:668] setValue(): << setValue
+[ 33648][V][BLECharacteristic.cpp:490] notify(): >> notify: length: 4
+[ 33654][D][BLECharacteristic.cpp:790] onNotify(): >> onNotify: default
+[ 33660][D][BLECharacteristic.cpp:791] onNotify(): << onNotify
+[ 33666][V][GeneralUtils.cpp:296] hexDump():      00 01 02 03 04 05 06 07 08 09 0a 0b 0c 0d 0e 0f
+[ 33675][V][GeneralUtils.cpp:297] hexDump():      -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+[ 33683][V][GeneralUtils.cpp:323] hexDump(): 0000 0b 00 00 00                                      ....
+[ 33692][V][BLECharacteristic.cpp:511] notify(): << notifications disabled; ignoring
+[ 33700][D][BLECharacteristic.cpp:796] onStatus(): >> onStatus: default
+[ 33706][D][BLECharacteristic.cpp:797] onStatus(): << onStatus
+[ 33714][V][BLECharacteristic.cpp:659] setValue(): >> setValue: length=4, data=0c000000, characteristic UUID=beb5483e-36e1-4688-b7f5-ea07361b26a8
+[ 33724][V][FreeRTOS.cpp:189] take(): Semaphore taking: name: SetValue (0x3ffd9e78), owner: <N/A> for <Unknown>
+[ 33734][V][FreeRTOS.cpp:198] take(): Semaphore taken:  name: SetValue (0x3ffd9e78), owner: <Unknown>
+[ 33743][V][FreeRTOS.cpp:143] give(): Semaphore giving: name: SetValue (0x3ffd9e78), owner: <Unknown>
+[ 33752][V][BLECharacteristic.cpp:668] setValue(): << setValue
+[ 33758][V][BLECharacteristic.cpp:490] notify(): >> notify: length: 4
+[ 33764][D][BLECharacteristic.cpp:790] onNotify(): >> onNotify: default
+[ 33770][D][BLECharacteristic.cpp:791] onNotify(): << onNotify
+[ 33776][V][GeneralUtils.cpp:296] hexDump():      00 01 02 03 04 05 06 07 08 09 0a 0b 0c 0d 0e 0f
+[ 33784][V][GeneralUtils.cpp:297] hexDump():      -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+[ 33793][V][GeneralUtils.cpp:323] hexDump(): 0000 0c 00 00 00                                      ....
+[ 33802][V][BLECharacteristic.cpp:511] notify(): << notifications disabled; ignoring
+[ 33810][D][BLECharacteristic.cpp:796] onStatus(): >> onStatus: default
+[ 33816][D][BLECharacteristic.cpp:797] onStatus(): << onStatus
+[ 33824][V][BLECharacteristic.cpp:659] setValue(): >> setValue: length=4, data=0d000000, characteristic UUID=beb5483e-36e1-4688-b7f5-ea07361b26a8
+[ 33834][V][FreeRTOS.cpp:189] take(): Semaphore taking: name: SetValue (0x3ffd9e78), owner: <N/A> for <Unknown>
+[ 33844][V][FreeRTOS.cpp:198] take(): Semaphore taken:  name: SetValue (0x3ffd9e78), owner: <Unknown>
+[ 33853][V][FreeRTOS.cpp:143] give(): Semaphore giving: name: SetValue (0x3ffd9e78), owner: <Unknown>
+[ 33862][V][BLECharacteristic.cpp:668] setValue(): << setValue
+[ 33867][V][BLECharacteristic.cpp:490] notify(): >> notify: length: 4
+[ 33874][D][BLECharacteristic.cpp:790] onNotify(): >> onNotify: default
+[ 33880][D][BLECharacteristic.cpp:791] onNotify(): << onNotify
+[ 33885][V][GeneralUtils.cpp:296] hexDump():      00 01 02 03 04 05 06 07 08 09 0a 0b 0c 0d 0e 0f
+[ 33894][V][GeneralUtils.cpp:297] hexDump():      -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+[ 33903][V][GeneralUtils.cpp:323] hexDump(): 0000 0d 00 00 00                                      ....
+[ 33912][V][BLECharacteristic.cpp:511] notify(): << notifications disabled; ignoring
+[ 33919][D][BLECharacteristic.cpp:796] onStatus(): >> onStatus: default
+[ 33926][D][BLECharacteristic.cpp:797] onStatus(): << onStatus
+[ 33934][V][BLECharacteristic.cpp:659] setValue(): >> setValue: length=4, data=0e000000, characteristic UUID=beb5483e-36e1-4688-b7f5-ea07361b26a8
+[ 33944][V][FreeRTOS.cpp:189] take(): Semaphore taking: name: SetValue (0x3ffd9e78), owner: <N/A> for <Unknown>
+[ 33954][V][FreeRTOS.cpp:198] take(): Semaphore taken:  name: SetValue (0x3ffd9e78), owner: <Unknown>
+[ 33963][V][FreeRTOS.cpp:143] give(): Semaphore giving: name: SetValue (0x3ffd9e78), owner: <Unknown>
+[ 33972][V][BLECharacteristic.cpp:668] setValue(): << setValue
+[ 33977][V][BLECharacteristic.cpp:490] notify(): >> notify: length: 4
+[ 33983][D][BLECharacteristic.cpp:790] onNotify(): >> onNotify: default
+[ 33990][D][BLECharacteristic.cpp:791] onNotify(): << onNotify
+[ 33995][V][GeneralUtils.cpp:296] hexDump():      00 01 02 03 04 05 06 07 08 09 0a 0b 0c 0d 0e 0f
+[ 34004][V][GeneralUtils.cpp:297] hexDump():      -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+[ 34012][V][GeneralUtils.cpp:323] hexDump(): 0000 0e 00 00 00                                      ....
+[ 34021][V][BLECharacteristic.cpp:511] notify(): << notifications disabled; ignoring
+[ 34029][D][BLECharacteristic.cpp:796] onStatus(): >> onStatus: default
+[ 34035][D][BLECharacteristic.cpp:797] onStatus(): << onStatus
+[ 34044][V][BLECharacteristic.cpp:659] setValue(): >> setValue: length=4, data=0f000000, characteristic UUID=beb5483e-36e1-4688-b7f5-ea07361b26a8
+[ 34054][V][FreeRTOS.cpp:189] take(): Semaphore taking: name: SetValue (0x3ffd9e78), owner: <N/A> for <Unknown>
+[ 34063][V][FreeRTOS.cpp:198] take(): Semaphore taken:  name: SetValue (0x3ffd9e78), owner: <Unknown>
+[ 34072][V][FreeRTOS.cpp:143] give(): Semaphore giving: name: SetValue (0x3ffd9e78), owner: <Unknown>
+[ 34081][V][BLECharacteristic.cpp:668] setValue(): << setValue
+[ 34087][V][BLECharacteristic.cpp:490] notify(): >> notify: length: 4
+[ 34093][D][BLECharacteristic.cpp:790] onNotify(): >> onNotify: default
+[ 34099][D][BLECharacteristic.cpp:791] onNotify(): << onNotify
+[ 34105][V][GeneralUtils.cpp:296] hexDump():      00 01 02 03 04 05 06 07 08 09 0a 0b 0c 0d 0e 0f
+[ 34113][V][GeneralUtils.cpp:297] hexDump():      -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+[ 34122][V][GeneralUtils.cpp:323] hexDump(): 0000 0f 00 00 00                                      ....
+[ 34131][V][BLECharacteristic.cpp:511] notify(): << notifications disabled; ignoring
+[ 34139][D][BLECharacteristic.cpp:796] onStatus(): >> onStatus: default
+[ 34145][D][BLECharacteristic.cpp:797] onStatus(): << onStatus
+[ 34153][V][BLECharacteristic.cpp:659] setValue(): >> setValue: length=4, data=10000000, characteristic UUID=beb5483e-36e1-4688-b7f5-ea07361b26a8
+[ 34163][V][FreeRTOS.cpp:189] take(): Semaphore taking: name: SetValue (0x3ffd9e78), owner: <N/A> for <Unknown>
+[ 34173][V][FreeRTOS.cpp:198] take(): Semaphore taken:  name: SetValue (0x3ffd9e78), owner: <Unknown>
+[ 34182][V][FreeRTOS.cpp:143] give(): Semaphore giving: name: SetValue (0x3ffd9e78), owner: <Unknown>
+[ 34191][V][BLECharacteristic.cpp:668] setValue(): << setValue
+[ 34197][V][BLECharacteristic.cpp:490] notify(): >> notify: length: 4
+[ 34203][D][BLECharacteristic.cpp:790] onNotify(): >> onNotify: default
+[ 34209][D][BLECharacteristic.cpp:791] onNotify(): << onNotify
+[ 34215][V][GeneralUtils.cpp:296] hexDump():      00 01 02 03 04 05 06 07 08 09 0a 0b 0c 0d 0e 0f
+[ 34223][V][GeneralUtils.cpp:297] hexDump():      -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+[ 34232][V][GeneralUtils.cpp:323] hexDump(): 0000 10 00 00 00                                      ....
+[ 34241][V][BLECharacteristic.cpp:511] notify(): << notifications disabled; ignoring
+[ 34248][D][BLECharacteristic.cpp:796] onStatus(): >> onStatus: default
+[ 34255][D][BLECharacteristic.cpp:797] onStatus(): << onStatus
+[ 34263][V][BLECharacteristic.cpp:659] setValue(): >> setValue: length=4, data=11000000, characteristic UUID=beb5483e-36e1-4688-b7f5-ea07361b26a8
+[ 34273][V][FreeRTOS.cpp:189] take(): Semaphore taking: name: SetValue (0x3ffd9e78), owner: <N/A> for <Unknown>
+[ 34283][V][FreeRTOS.cpp:198] take(): Semaphore taken:  name: SetValue (0x3ffd9e78), owner: <Unknown>
+[ 34292][V][FreeRTOS.cpp:143] give(): Semaphore giving: name: SetValue (0x3ffd9e78), owner: <Unknown>
