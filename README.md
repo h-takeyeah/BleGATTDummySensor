@@ -6,7 +6,7 @@ M5Stack に書き込むと GATT のサーバーとして動作し、クライア
 
 ## Spec
 
-[M5Stack GREY](https://docs.m5stack.com/en/core/gray) を使ったが別のモデルでも大丈夫
+[M5Stack GRAY](https://docs.m5stack.com/en/core/gray) を使ったが別のモデルでも大丈夫
 
 1. ソースコードにハードコードされた UUID にしたがって Service およびそれに紐づく Characteristic を Advertise する
 
